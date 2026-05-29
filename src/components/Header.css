@@ -1,0 +1,39 @@
+.header {
+  background-color: var(--elements-color);
+  padding: 24px 0;
+  margin-bottom: 48px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 24px 0;
+  }
+  .header h1 {
+    font-size: 24px;
+  }
+  .theme-toggle {
+    font-size: 16px;
+  }
+}

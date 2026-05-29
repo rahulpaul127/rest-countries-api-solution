@@ -1,0 +1,143 @@
+.detail-page {
+  padding-bottom: 64px;
+}
+
+.controls {
+  margin-bottom: 64px;
+  margin-top: 32px;
+}
+
+.back-button {
+  background-color: var(--elements-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  padding: 10px 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+}
+
+.country-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.flag-wrapper {
+  width: 100%;
+}
+
+.flag-wrapper img {
+  width: 100%;
+  max-width: 560px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.details-wrapper {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details-wrapper h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 48px;
+  font-size: 16px;
+}
+
+.details-grid p {
+  margin-bottom: 12px;
+}
+
+.details-grid strong {
+  font-weight: 600;
+}
+
+.border-countries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.border-countries strong {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.border-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.border-tag {
+  background-color: var(--elements-color);
+  color: var(--text-color);
+  padding: 6px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.border-tag:hover {
+  transform: translateY(-2px);
+}
+
+@media (min-width: 1024px) {
+  .controls {
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+  
+  .country-detail-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 120px;
+  }
+
+  .flag-wrapper {
+    flex: 1;
+  }
+  
+  .flag-wrapper img {
+    max-width: 100%;
+  }
+
+  .details-wrapper {
+    flex: 1;
+  }
+  
+  .details-wrapper h1 {
+    font-size: 32px;
+  }
+
+  .details-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .border-countries {
+    flex-direction: row;
+    align-items: center;
+  }
+}

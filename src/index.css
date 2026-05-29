@@ -1,0 +1,67 @@
+:root {
+  --blue-900: hsl(209, 23%, 22%);
+  --blue-950: hsl(207, 26%, 17%);
+  --grey-950: hsl(200, 15%, 8%);
+  --grey-400: hsl(0, 0%, 50%);
+  --grey-50: hsl(0, 0%, 99%);
+  --white: hsl(0, 100%, 100%);
+
+  /* Light Theme Variables */
+  --bg-color: var(--grey-50);
+  --text-color: var(--grey-950);
+  --elements-color: var(--white);
+  --input-color: var(--grey-400);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Variables */
+  --bg-color: var(--blue-950);
+  --text-color: var(--white);
+  --elements-color: var(--blue-900);
+  --input-color: var(--white);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 14px;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Common Layout Utilities */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.shadow {
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .shadow {
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+}
