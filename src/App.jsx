@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import HomePage from './pages/HomePage';
-import DetailPage from './pages/DetailPage';
+
+// Lazy load the pages to enable code splitting
+const HomePage = lazy(() => import('./pages/HomePage'));
+const DetailPage = lazy(() => import('./pages/DetailPage'));
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -19,10 +21,12 @@ function App() {
   return (
     <Router>
       <Header theme={theme} toggleTheme={toggleTheme} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/country/:code" element={<DetailPage />} />
-      </Routes>
+      <Suspense fallback={<div className="container" style={{ padding: '40px 0' }}>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/country/:code" element={<DetailPage />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }
